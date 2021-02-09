@@ -1,5 +1,5 @@
 const { Request, Response } = require("express");
-const Port = require("../models/Port");
+const { getPorts } = require("../services/portService");
 
 /**
  * Returns filtered ports
@@ -8,7 +8,7 @@ const Port = require("../models/Port");
  */
 exports.portList = async (req, res) => {
   try {
-    const portList = await Port.find({});
+    const portList = await getPorts();
     res.status(200).send(portList);
   } catch (error) {
     res.status(500).send("internal server error");

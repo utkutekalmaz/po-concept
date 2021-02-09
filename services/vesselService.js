@@ -1,6 +1,5 @@
 const Port = require("../models/Port");
 const Vessel = require("../models/Vessel");
-const geolib = require("geolib");
 
 /**
  *

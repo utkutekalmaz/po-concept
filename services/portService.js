@@ -27,6 +27,11 @@ exports.getPort = async (search) => {
   // console.log(selectedPort);
   return selectedPort._doc || null;
 };
+exports.getPorts = async () => {
+  const portList = await Port.findOne({});
+
+  return portList;
+};
 
 /**
  *
