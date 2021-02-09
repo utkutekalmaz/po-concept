@@ -8,8 +8,8 @@ const Port = require("../models/Port");
  */
 exports.portList = async (req, res) => {
   try {
-    const canadianports = await Port.find({ "Country Code": "CAN" });
-    res.status(200).send(canadianports);
+    const portList = await Port.find({});
+    res.status(200).send(portList);
   } catch (error) {
     res.status(500).send("internal server error");
   }
